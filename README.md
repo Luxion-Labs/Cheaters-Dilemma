@@ -14,30 +14,39 @@
 
 ## 1. Vision
 
-The Cheater's Dilemma is a multi-agent governance war simulation designed to explore how autonomous AI agents compete for resources, capture governance through token accumulation, and how institutional corruption can emerge naturally within such systems.
+The Cheater's Dilemma is a **multi-agent governance war simulation** designed to explore how autonomous AI agents compete for resources, capture governance through token accumulation, and how institutional corruption can emerge naturally within such systems.
 
-This project investigates the inherent tension between cooperation and defection in complex adaptive systems. It provides a high-level, deterministic simulation environment where AI agents with distinct strategies interact within a token-based economy and a token-weighted governance structure. The ultimate goal is to understand the dynamics of power concentration, the evolution of strategies, and the implications for real-world socio-economic and political systems, especially in decentralized contexts.
+This project investigates the inherent tension between **cooperation** and **defection** in complex adaptive systems. It provides a **deterministic simulation environment** where AI agents with distinct strategies interact within a **token-based economy** and a **token-weighted governance structure**. The ultimate goal is to understand the dynamics of power concentration, the evolution of strategies, and the implications for real-world socio-economic and political systems, especially in decentralized contexts.
 
-The system comprises a powerful backend simulation engine, a reactive frontend visualization, and immutable smart contracts that encode the final distribution of power.
+The system comprises a powerful **backend simulation engine**, a reactive **frontend visualization**, and immutable **smart contracts** that encode the final distribution of power.
+
+---
 
 ## 2. Motivation & Idea
 
-Traditional game theory often simplifies agent interactions, focusing on equilibrium states in well-defined scenarios. However, real-world systems are dynamic, agents possess memory, and rules can be changed from within. The Cheater's Dilemma moves beyond these limits by simulating a complex environment where agents learn, adapt, and strategically manipulate the rules themselves.
+Traditional game theory often simplifies agent interactions, focusing on equilibrium states in well-defined scenarios. However, real-world systems are dynamic, agents possess memory, and rules can be changed from within. The Cheater's Dilemma moves beyond these limits by simulating a complex environment where agents **learn, adapt, and strategically manipulate the rules themselves.**
 
-The motivation stems from the observation that in many systems, particularly those involving tokens or voting power, the initial conditions and individual behaviors can lead to emergent properties like governance capture and institutional corruption. By creating a multi-agent simulation, we can observe these complex phenomena in a controlled, reproducible manner, offering insights into the mechanisms that drive such outcomes. This project aims to bridge the gap between theoretical game mechanics and the emergent complexity of adaptive multi-agent systems.
+The motivation stems from the observation that in many systems, particularly those involving tokens or voting power, the initial conditions and individual behaviors can lead to emergent properties like **governance capture** and **institutional corruption**. By creating a multi-agent simulation, we can observe these complex phenomena in a controlled, reproducible manner, offering insights into the mechanisms that drive such outcomes. This project aims to bridge the gap between theoretical game mechanics and the emergent complexity of adaptive multi-agent systems.
+
+---
 
 ## 3. Core Concepts
 
 ### 3.1 Agents
 
-Agents in the Cheater's Dilemma are autonomous entities endowed with memory, personality traits, and a utility-based decision-making process. Each agent assesses potential actions based on expected token gains, risks (like retaliation), governance influence, and reputation loss. Their "personalities" (e.g., Conservative, Aggressive, Politician, Opportunist) are defined by varying weightings of these utility factors, leading to diverse and dynamic behaviors. Agents are not static; their strategies can evolve based on the outcomes of their interactions.
+Agents in the Cheater's Dilemma are **autonomous entities** endowed with:
+*   **Memory**: Agents remember past interactions.
+*   **Personality Traits**: Defined by varying weightings of utility factors (e.g., Conservative, Aggressive, Politician, Opportunist).
+*   **Utility-Based Decision-Making**: Agents assess potential actions based on expected token gains, risks (like retaliation), governance influence, and reputation loss.
+
+Their strategies can **evolve** based on the outcomes of their interactions, leading to diverse and dynamic behaviors.
 
 ### 3.2 Strategies
 
 Agents employ various strategies, ranging from cooperative to highly self-serving:
 *   **Cooperation**: Agents may work to generate tokens, benefiting all.
 *   **Defection**: Agents might choose to steal from others, prioritizing individual gain.
-*   **Conditional Behavior**: Strategies can be more nuanced, such as retaliating only when stolen from, or forming implicit alliances.
+*   **Conditional Behavior**: Nuanced strategies like retaliating only when stolen from, or forming implicit alliances.
 *   **Governance Manipulation**: Agents with sufficient token power can strategically vote to change rules to their advantage.
 
 ### 3.3 Interactions
@@ -48,9 +57,11 @@ The simulation models rich interactions between agents:
 *   **Conflict and Elimination**: Aggressive actions like 'attack' can lead to the elimination of other agents, concentrating power and resources.
 *   **Token-Weighted Governance**: Agents use their accumulated tokens to vote on rule changes, directly influencing the game's mechanics.
 
+---
+
 ## 4. System Architecture
 
-The Cheater's Dilemma follows a clean architectural separation, ensuring modularity and clarity across its core components.
+The Cheater's Dilemma follows a **clean architectural separation**, ensuring modularity and clarity across its core components.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -90,9 +101,11 @@ The Cheater's Dilemma follows a clean architectural separation, ensuring modular
 └─────────────────────────────────────────────────────────────┘
 ```
 
-*   **Backend Simulation Engine**: Developed in Python, this is the core of the system, running deterministic multi-agent simulations. It handles agent decision-making, interactions, token economics, and governance mechanics, producing detailed JSON output.
-*   **Frontend Visualization**: A Next.js (React) application that provides an interactive interface for configuring simulations, visualizing live events, and replaying past simulation outcomes. It consumes data from the backend API.
-*   **Smart Contracts**: Written in Solidity and deployed using Foundry, these contracts secure the final state of the simulation on a blockchain (e.g., Monad Testnet). The `DilemmaToken` ERC20 contract encodes the immutable token distribution and simulation hash, representing the final power structure.
+*   **Backend Simulation Engine**: Developed in **Python**, this is the core of the system, running deterministic multi-agent simulations. It handles agent decision-making, interactions, token economics, and governance mechanics, producing detailed JSON output.
+*   **Frontend Visualization**: A **Next.js (React)** application that provides an interactive interface for configuring simulations, visualizing live events, and replaying past simulation outcomes. It consumes data from the backend API.
+*   **Smart Contracts**: Written in **Solidity** and deployed using **Foundry**, these contracts secure the final state of the simulation on a blockchain (e.g., Monad Testnet). The `DilemmaToken` ERC20 contract encodes the immutable token distribution and simulation hash, representing the final power structure.
+
+---
 
 ## 5. Codebase Structure
 
@@ -123,6 +136,8 @@ The project is organized into distinct directories for clarity and separation of
     └── package.json          # Frontend dependencies and scripts
 ```
 
+---
+
 ## 6. Documentation
 
 Comprehensive documentation is available in the `docs/` directory, providing in-depth explanations of the project's vision, architecture, and technical details.
@@ -135,6 +150,8 @@ To get started, we recommend the following documents:
 *   **[08_extending_and_research.md](docs/08_extending_and_research.md)**: Notes on how to extend the system for research or new features.
 
 For a complete overview, please explore the `docs/` directory.
+
+---
 
 ## 7. Running the Project
 
@@ -196,15 +213,19 @@ npm run dev
 ```
 The application will typically be available at `http://localhost:3000`.
 
+---
+
 ## 8. Extending the System
 
-The Cheater's Dilemma is designed for experimentation and research.
+The Cheater's Dilemma is designed for **experimentation and research**.
 
 *   **Adding New Strategies**: Implement new `Agent` subclasses in `backend/app/agents/` to explore different behavioral models.
 *   **Modifying Rules**: Adjust parameters in `backend/app/core/rules.py` or modify the governance mechanism in `backend/app/core/governance.py` to test various game mechanics.
 *   **Experimentation and Research**: The deterministic nature of the simulation allows for reproducible experiments to study emergent phenomena, policy impacts, and the evolution of agent behaviors.
 
 Refer to **[08_extending_and_research.md](docs/08_extending_and_research.md)** for more in-depth guidance.
+
+---
 
 ## 9. Limitations & Roadmap
 
@@ -222,13 +243,39 @@ Refer to **[08_extending_and_research.md](docs/08_extending_and_research.md)** f
 
 ### Long-Term Vision
 
-The long-term vision includes developing a framework for agents to dynamically learn and adapt their strategies, exploring more complex governance structures (e.g., delegated voting, liquid democracy), and integrating with real-world decentralized protocols for live experimentation.
+The long-term vision includes developing a framework for agents to **dynamically learn and adapt their strategies**, exploring more complex governance structures (e.g., delegated voting, liquid democracy), and integrating with real-world decentralized protocols for live experimentation.
 
 For a detailed roadmap, please consult **[09_limitations_and_roadmap.md](docs/09_limitations_and_roadmap.md)**.
 
+---
+
 ## 10. License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+```
+MIT License
+
+Copyright (c) [year] [fullname]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
 
 ## Acknowledgments
 
