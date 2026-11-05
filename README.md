@@ -59,6 +59,10 @@ The motivation stems from the observation that in many systems, particularly tho
 
 ### 3.1 Agents
 
+<details>
+<summary><b>Expand 3. Core Concepts Details</b></summary>
+<br/>
+
 Agents in the Cheater's Dilemma are **autonomous entities** endowed with:
 *   **Memory**: Agents remember past interactions.
 *   **Personality Traits**: Defined by varying weightings of utility factors (e.g., Conservative, Aggressive, Politician, Opportunist).
@@ -84,9 +88,16 @@ The simulation models rich interactions between agents:
 
 ---
 
+<br/>
+</details>
+
 ## 4. System Architecture
 
 The Cheater's Dilemma follows a **clean architectural separation**, ensuring modularity and clarity across its core components.
+
+<details>
+<summary><b>Expand 4. System Architecture Details</b></summary>
+<br/>
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -132,9 +143,16 @@ The Cheater's Dilemma follows a **clean architectural separation**, ensuring mod
 
 ---
 
+<br/>
+</details>
+
 ## 5. Codebase Structure
 
 The project is organized into distinct directories for clarity and separation of concerns:
+
+<details>
+<summary><b>Expand 5. Codebase Structure Details</b></summary>
+<br/>
 
 ```
 .
@@ -163,6 +181,9 @@ The project is organized into distinct directories for clarity and separation of
 
 ---
 
+<br/>
+</details>
+
 ## 6. Documentation
 
 Comprehensive documentation is available in the `docs/` directory, providing in-depth explanations of the project's vision, architecture, and technical details.
@@ -178,71 +199,13 @@ For a complete overview, please explore the `docs/` directory.
 
 ---
 
-## 7. Running the Project
-
-This section guides you through setting up and running the Cheater's Dilemma locally.
-
-### Prerequisites
-
-*   **Python 3.10+** (for the backend simulation)
-*   **Node.js 18+** (for the frontend visualization)
-*   **Foundry** (for smart contract development and deployment)
-
-### Local Setup
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/your-repo/cheaters-dilemma.git
-    cd cheaters-dilemma
-    ```
-2.  **Backend Setup:**
-    ```bash
-    cd backend
-    pip install -r requirements.txt # Or use your preferred Python package manager
-    ```
-3.  **Frontend Setup (Optional, for visualization):**
-    ```bash
-    cd frontend
-    npm install # Or `yarn install` / `bun install`
-    ```
-4.  **Smart Contract Setup (Optional, for development/deployment):**
-    ```bash
-    cd contracts
-    forge build
-    ```
-
-### Running Simulations
-
-To run a basic simulation and deploy its results to a local blockchain (simulated):
-
-```bash
-# 1. Run the simulation
-cd backend
-python demo_flow.py
-
-# 2. Deploy tokens (demo mode)
-python scripts/deploy_token.py simulation_results_demo_seed42.json
-
-# 3. Verify determinism
-python verify_determinism.py
-```
-For more detailed instructions, refer to **[QUICK_START.md](QUICK_START.md)**.
-
-### Running the Frontend
-
-To start the frontend visualization application:
-
-```bash
-cd frontend
-npm run dev
-```
-The application will typically be available at `http://localhost:3000`.
-
----
-
 ## 8. Extending the System
 
 The Cheater's Dilemma is designed for **experimentation and research**.
+
+<details>
+<summary><b>Expand 8. Extending the System Details</b></summary>
+<br/>
 
 *   **Adding New Strategies**: Implement new `Agent` subclasses in `backend/app/agents/` to explore different behavioral models.
 *   **Modifying Rules**: Adjust parameters in `backend/app/core/rules.py` or modify the governance mechanism in `backend/app/core/governance.py` to test various game mechanics.
@@ -252,9 +215,16 @@ Refer to **[08_extending_and_research.md](docs/08_extending_and_research.md)** f
 
 ---
 
+<br/>
+</details>
+
 ## 9. Limitations & Roadmap
 
 ### Known Limitations
+
+<details>
+<summary><b>Expand 9. Limitations & Roadmap Details</b></summary>
+<br/>
 
 *   **Computational Intensity**: Complex simulations with many agents or turns can be resource-intensive.
 *   **Simplistic Agent Learning**: Current agents follow predefined personality traits; more advanced adaptive learning mechanisms could be explored.
@@ -274,33 +244,8 @@ For a detailed roadmap, please consult **[09_limitations_and_roadmap.md](docs/09
 
 ---
 
-## 10. License
-
-```
-MIT License
-
-Copyright (c) [year] [fullname]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
----
+<br/>
+</details>
 
 ## Acknowledgments
 
@@ -316,6 +261,3 @@ SOFTWARE.
 
 ## Maintainer Response SLA
 Luxion Labs enforces a strict 24-hour response SLA on all community issues, feature proposals, and pull requests. See [CONTRIBUTING.md](CONTRIBUTING.md) for full development guidelines.
-
-## License
-Distributed under the MIT License. See [LICENSE](LICENSE) for details.
